@@ -1,0 +1,36 @@
+---
+permalink: "/{{ locale }}/index.html"
+translationKey: "homepage"
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+  <h1>Hola 👋</h1>
+
+  <p class"paragraph">Soy Borja Soler, diseñador de producto y muchas cosas más.
+  En esta página comparto contenido sobre diseño de producto, productividad y desarrollo personal 🚀.</p>
+
+  <h2>Posts</h2>
+  {% for post in collections.posts_es %}
+    {% if loop.first %}<ul>{% endif %}
+      <li>
+
+        <article>
+          <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+          <p><time datetime="{{ post.date | date('Y-MM-DD') }}">{{ post.date | date("DD MMMM[,] Y", locale) }}</time></p>
+        </article>
+
+      </li>
+
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
+
+  <div class="followme">
+    <ul>
+      <li>Puedes encontrarme en <a href="https://twitter.com/borjasolerme" target=""_blanck>Twitter</a>, <a href="https://www.instagram.com/borjasolerme/" target=""_blanck>Instagram</a>, <a href="https://www.linkedin.com/in/borjasolerreyes/" target=""_blanck>Linkedin</a>, <a href="https://dribbble.com/borjasoler" target=""_blanck>Dribble</a>.</li>
+    </ul>
+  </div>
+
+{% endblock %}
