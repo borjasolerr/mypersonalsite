@@ -9,17 +9,17 @@ translationKey: "homepage"
 
   <h1>Hola 👋</h1>
 
-  <p class"paragraph">Soy Borja Soler, diseñador de producto y muchas cosas más.
+  <p style="margin-top: 64px">Soy Borja Soler, diseñador de producto y muchas cosas más.
   En esta página comparto contenido sobre diseño de producto, productividad y desarrollo personal 🚀.</p>
 
   <h2>Posts</h2>
   {% for post in collections.posts_es %}
     {% if loop.first %}<ul>{% endif %}
-      <li>
+      <li style="padding: 0">
 
-        <article>
+         <article class="article-view">
           <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-          <p><time datetime="{{ post.date | date('Y-MM-DD') }}">{{ post.date | date("DD MMMM[,] Y", locale) }}</time></p>
+          <p class="timemargintop"><time class="time-margin" datetime="{{ post.date | date('Y-MM-DD') }}">{{ post.date | date("MMMM[,] Y", locale) }}</time></p>
         </article>
 
       </li>

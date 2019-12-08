@@ -51,14 +51,21 @@ li {
   margin: 0 auto;
   max-width: 60%;
 }
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 90%;
+  }
+}
 
 .article-view {
-  display: flex;
-  align-items: baseline;
 }
 
 .time-margin {
-  margin-left: 16px;
+  font-size: 12px;
+}
+
+.timemargintop {
+  margin-top: -16px !important;
 }
 
 footer {
